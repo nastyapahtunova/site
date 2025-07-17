@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Roistat Counter Start -->
+<script>
+  (function(w, d, s, h, id) {
+      w.roistatProjectId = id; w.roistatHost = h;
+      var p = d.location.protocol == "https:" ? "https://" : "http://";
+      var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
+      var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+  })(window, document, 'script', 'cloud.roistat.com', '7b67903314ca9a473ac201b7466cb224');
+  </script>
+  <!-- Roistat Counter End -->
+  </head>
+
+  <body>
+    <form class="film-form">
+      <div class="control-wrapper">
+        <label for="title">Название:</label>
+        <div class="input-wrapper">
+          <input type="text" id="title" name="title" />
+        </div>
+      </div>
+      <div class="control-wrapper">
+        <label for="genre">Жанр:</label>
+        <div class="input-wrapper">
+          <input type="text" id="genre" name="genre" />
+        </div>
+      </div>
+      <div class="control-wrapper">
+        <label for="realeseYear">Год:</label>
+        <div class="input-wrapper">
+          <input type="text" id="realeseYear" name="realeseYear" />
+        </div>
+      </div>
+      <input type="checkbox" id="isWatched" name="isWatched" />
+      <label for="isWatched">Успели посмотреть?</label>
+
+      <button id="submit" type="submit">Добавить</button>
+      <button type="button" class="cancel">Отменить редактирование</button>
+    </form>
+
+    <table class="film-table">
+      <select name="select" class="select">
+        <option value="title">Название</option>
+        <option value="genre">Жанр</option>
+        <option value="releaseYear">Год выпуска</option>
+      </select>
+      <button class="sort">Сортировать</button>
+      <tr>
+        <th>Название</th>
+        <th>Жанр</th>
+        <th>Год</th>
+        <th>Успели Посмотреть</th>
+        <th>Действия</th>
+      </tr>
+      <tbody class="film-tbody"></tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
