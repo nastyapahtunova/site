@@ -66,7 +66,7 @@ function sendLeadToRoistat(film) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       roistat: window.roistatVisit || "",
-      key: "7b67903314ca9a473ac201b7466cb224",
+      key: "7ed059ed206579a5cbb1ac6be2d0571e4",
       title: "Добавлен или обновлён фильм",
       name: film.title,
       fields: {
